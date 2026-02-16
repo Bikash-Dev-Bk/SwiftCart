@@ -76,8 +76,10 @@
               <!-- large nav links -->
               <div class="w-fit">
                 <nav class="hidden md:flex space-x-8 font-medium">
-                  <a href="#" class="text-indigo-600">Home</a>
-                  <a href="#" class="hover:text-indigo-600">Products</a>
+                  <a href="./index.html" class="hover:text-indigo-600">Home</a>
+                  <a href="./products.html" class="text-indigo-600"
+                    >Products</a
+                  >
                   <a href="#" class="hover:text-indigo-600">About</a>
                   <a href="#" class="hover:text-indigo-600">Contact</a>
                 </nav>
@@ -115,10 +117,10 @@
       <div id="small-menu" class="small-overlay z-50">
         <ul class="text-white p-5">
           <li class="text-base md:text-[18px] font-semibold mt-5">
-            <a href="#">Home</a>
+            <a href="./index.html">Home</a>
           </li>
           <li class="text-base md:text-[18px] font-semibold mt-5">
-            <a href="#">Products</a>
+            <a href="./index.html">Products</a>
           </li>
           <li class="text-base md:text-[18px] font-semibold mt-5">
             <a href="#">About</a>
@@ -137,40 +139,17 @@
         <div class="max-w-7xl mx-auto px-6 montserrat-font mt-12">
           <h3 class="text-3xl text-center font-bold mb-10">Our Products</h3>
           <div
+            id="products-container"
             class="flex flex-col md:flex-row gap-5 justify-center items-center mb-16">
-            <div>
-              <p
-                class="bg-blue-600 text-white font-semibold px-5 py-3 rounded-full">
-                All
-              </p>
-            </div>
-            <div>
-              <p
-                class="border px-5 py-3 font-semibold rounded-full hover:bg-blue-600 hover:text-white">
-                Electronics
-              </p>
-            </div>
-            <div>
-              <p
-                class="border px-5 py-3 font-semibold rounded-full hover:bg-blue-600 hover:text-white">
-                Jewelry
-              </p>
-            </div>
-            <div>
-              <p
-                class="border px-5 py-3 font-semibold rounded-full hover:bg-blue-600 hover:text-white">
-                Men's Clothing
-              </p>
-            </div>
-            <div>
-              <p
+            <!-- <p
                 class="border px-5 py-3 font-semibold rounded-full hover:bg-blue-600 hover:text-white">
                 Women's Clothing
-              </p>
-            </div>
+              </p> -->
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- products  -->
+
+          <div id="word-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Product Card -->
             <div class="bg-white rounded-xl shadow-sm overflow-hidden">
               <img src="./Assets/1.jpg" class="w-full h-96 object-cover" />
