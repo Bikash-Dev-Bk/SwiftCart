@@ -132,8 +132,6 @@ const displayProductsCategory = (productsCategory) => {
   allBtn.classList.add("bg-blue-600", "text-white");
 };
 
-
-
 // Load All Products
 const loadAllProducts = () => {
   fetch("https://fakestoreapi.com/products")
@@ -182,7 +180,7 @@ const displayProducts = (products) => {
 
         <div class="flex gap-3 mt-4">
           <button
-            class="flex-1 border rounded-lg py-2 text-sm hover:bg-gray-100">
+            class="details-btn flex-1 border rounded-lg py-2 text-sm hover:bg-gray-100">
             Details
           </button>
           <button
@@ -193,9 +191,57 @@ const displayProducts = (products) => {
       </div>
     `;
 
+    // 🔥 Details Button Click → Modal Open
+    productDiv.querySelector(".details-btn").addEventListener("click", () => {
+      openModal(product);
+    });
+
     productsContainer.appendChild(productDiv);
   });
 };
 
 loadProductsCategory();
 loadAllProducts();
+
+// Open Modal
+const openModal = (product) => {
+  const modal = document.getElementById("productModal");
+  const modalContent = document.getElementById("modalContent");
+
+  modalContent.innerHTML = `
+    <img src="${product.image}" class="w-full h-72 object-contain bg-gray-100 p-5 rounded-lg"/>
+
+    <h2 class="text-2xl font-bold mt-4">${product.title}</h2>
+
+    <p class="text-gray-600 mt-3">${product.description}</p>
+
+    <div class="flex justify-between items-center mt-4">
+      <p class="text-xl font-bold">$${product.price}</p>
+
+      <div class="flex items-center text-sm text-gray-600">
+        <span class="text-yellow-400 text-xl mr-1">★</span>
+        <span class="font-medium mr-1">${product.rating.rate}</span>
+        <span class="text-gray-400">(${product.rating.count})</span>
+      </div>
+    </div>
+
+    <button class="w-full mt-6 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">
+      Buy Now
+    </button>
+  `;
+
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+};
+
+// Close Modal
+document.getElementById("closeModal").addEventListener("click", () => {
+  const modal = document.getElementById("productModal");
+  modal.classList.add("hidden");
+});
+
+document.getElementById("productModal").addEventListener("click", (e) => {
+  if (e.target.id === "productModal") {
+    e.target.classList.add("hidden");
+  }
+});
