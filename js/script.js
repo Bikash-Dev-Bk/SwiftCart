@@ -185,7 +185,7 @@ const displayProducts = (products) => {
           </button>
           <button
             class="flex-1 bg-indigo-600 text-white rounded-lg py-2 text-sm hover:bg-indigo-700">
-            Add
+            Add to Cart
           </button>
         </div>
       </div>
